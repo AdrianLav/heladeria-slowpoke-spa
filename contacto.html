@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Heladería Slowpoke</title>
+  <meta name="description" content="Escríbenos, visítanos o llámanos. Estamos en el centro y abrimos todos los días." />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Aplica el tema guardado antes de pintar para evitar parpadeo -->
+  <script>try{var t=JSON.parse(localStorage.getItem('slowpoke_theme'));if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><img src="assets/images/logo.png" alt=""/><span>Heladería <em>Slowpoke</em></span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="promociones.html">Promociones</a><a href="nosotros.html">Nosotros</a><a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Cambiar modo claro u oscuro" title="Modo claro / oscuro">
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn" id="openCart" aria-label="Carrito">
+          <svg viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M6 6L5 3H2"/></svg>
+          <span class="badge" id="cartCount" style="display:none">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="appView" data-page="contacto">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Hablemos 🍓</h1>
+      <p class="section-sub">¿Una sugerencia, una pregunta o un pedido especial? Cuéntanos.</p>
+
+      <div class="contact-grid">
+        <form class="form-card" id="contactForm" novalidate>
+          <div class="form-success" id="formSuccess">✅ ¡Gracias! Tu mensaje fue enviado. Te responderemos pronto.</div>
+
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+            <div class="error"></div>
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
+            <div class="error"></div>
+          </div>
+          <div class="field">
+            <label for="subject">Asunto</label>
+            <input id="subject" name="subject" type="text" placeholder="¿De qué se trata?" required />
+            <div class="error"></div>
+          </div>
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Escribe aquí tu mensaje..." required></textarea>
+            <div class="error"></div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Enviar mensaje</button>
+        </form>
+
+        <aside class="info-card">
+          <h3>Visítanos</h3>
+          <ul class="info-list">
+            <li><span class="ico">📍</span><div><strong>Dirección</strong><br><span style="color:var(--ink-soft)">Av. Helados 123, Centro</span></div></li>
+            <li><span class="ico">🕒</span><div><strong>Horario</strong><br><span style="color:var(--ink-soft)">Lunes a Domingo<br>11:00 – 22:00</span></div></li>
+            <li><span class="ico">📞</span><div><strong>Teléfono</strong><br><span style="color:var(--ink-soft)">+1 (555) 010-1234</span></div></li>
+            <li><span class="ico">✉️</span><div><strong>Email</strong><br><span style="color:var(--ink-soft)">hola@slowpoke.cafe</span></div></li>
+          </ul>
+          <div class="map" aria-label="Mapa de ubicación"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><div class="brand" style="color:white"><img src="assets/images/logo.png" alt="" style="width:40px;height:40px"/> <span>Heladería <em style="color:var(--pink-300)">Slowpoke</em></span></div><p style="margin-top:12px;max-width:300px">Helados artesanales hechos con calma.</p></div>
+      <div><h4>Explorar</h4><ul><li><a href="menu.html">Menú</a></li><li><a href="promociones.html">Promociones</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div><h4>Visítanos</h4><ul><li>Av. Helados 123, Centro</li><li>Lun–Dom · 11:00 – 22:00</li><li>+1 (555) 010-1234</li></ul></div>
+      <div><h4>Síguenos</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">© <span class="year"></span> Heladería Slowpoke · Hecho con cariño 🍓</div>
+  </footer>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head"><h3>Tu carrito</h3><button class="icon-btn" id="closeCart" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="drawer-body" id="cartBody"></div>
+    <!-- ============ Opciones del pedido ============ -->
+    <div class="order-options" id="orderOptions">
+      <h4>¿Cómo quieres tu pedido?</h4>
+      <div class="order-modes" id="orderModes">
+        <button type="button" class="order-mode active" data-mode="mesa">🍽️ Para la mesa</button>
+        <button type="button" class="order-mode" data-mode="llevar">🛍️ Para llevar</button>
+      </div>
+
+      <div class="order-field" id="fieldMesa">
+        <label for="tableNumber">Número de mesa</label>
+        <select id="tableNumber">
+          <option value="">Selecciona tu mesa…</option>
+          <option value="Mesa 1">Mesa 1</option>
+          <option value="Mesa 2">Mesa 2</option>
+          <option value="Mesa 3">Mesa 3</option>
+          <option value="Mesa 4">Mesa 4</option>
+          <option value="Mesa 5">Mesa 5</option>
+          <option value="Mesa 6">Mesa 6</option>
+          <option value="Mesa 7">Mesa 7</option>
+          <option value="Mesa 8">Mesa 8</option>
+          <option value="Barra">Barra</option>
+          <option value="Terraza">Terraza</option>
+        </select>
+      </div>
+
+      <div class="order-field" id="fieldLlevar" hidden>
+        <label for="deliveryPlace">¿A dónde irá el pedido?</label>
+        <select id="deliveryPlace">
+          <option value="">Elige una opción…</option>
+          <option value="Recojo en tienda">Recojo en tienda</option>
+          <option value="Entrega a domicilio">Entrega a domicilio</option>
+        </select>
+        <div id="addressWrap" hidden>
+          <label for="deliveryAddress" style="margin-top:10px">Dirección de entrega</label>
+          <input id="deliveryAddress" type="text" placeholder="Calle y número, zona / referencia">
+        </div>
+        <label for="deliveryName" style="margin-top:10px">Nombre de quien recoge</label>
+        <input id="deliveryName" type="text" placeholder="Tu nombre">
+      </div>
+
+      <p class="order-error" id="orderError"></p>
+    </div>
+
+    <div class="drawer-foot"><div class="total"><span>Total</span><strong id="cartTotal">$0.00</strong></div><button class="btn btn-primary" id="checkoutBtn" style="width:100%">Finalizar pedido</button></div>
+
+    <!-- ============ Compra confirmada ============ -->
+    <div class="order-confirmed" id="orderConfirmed" hidden>
+      <div class="oc-check">✓</div>
+      <h3>¡Compra confirmada!</h3>
+      <p class="oc-code">Pedido <strong id="ocCode">#000</strong></p>
+      <div class="oc-rows">
+        <div><span>Tipo de pedido</span><strong id="ocType">—</strong></div>
+        <div><span>Irá a</span><strong id="ocPlace">—</strong></div>
+        <div><span id="ocStaffLabel">Te atiende</span><strong id="ocStaff">—</strong></div>
+        <div><span>Contacto</span><strong><a id="ocPhone" href="tel:">—</a></strong></div>
+        <div><span>Productos</span><strong id="ocItems">—</strong></div>
+        <div><span>Total</span><strong id="ocTotal">—</strong></div>
+      </div>
+      <p class="oc-note" id="ocNote"></p>
+      <button class="btn btn-primary" id="ocClose" style="width:100%">Listo</button>
+    </div>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

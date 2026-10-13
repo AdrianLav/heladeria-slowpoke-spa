@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heladería Slowpoke</title>
+</head>
+<body>
+  <p>Redirigiendo…</p>
+  <script>
+    const requestedPath = `${location.pathname}${location.search}${location.hash}`;
+    const segments = decodeURIComponent(location.pathname).replace(/\/+$/, '').split('/').filter(Boolean);
+    const leaf = segments.at(-1) || '';
+    const knownPage = /^(index|menu|promociones|nosotros|contacto)(\.html)?$/i.test(leaf) || leaf.toLowerCase() === 'heladeria adruko.html';
+    const base = knownPage ? segments.slice(0, -1) : segments.length > 1 ? segments.slice(0, 1) : [];
+    try { sessionStorage.setItem('slowpoke_spa_path', requestedPath); } catch {}
+    location.replace(new URL(`/${[...base, 'index.html'].join('/')}`, location.origin));
+  </script>
+</body>
+</html>
